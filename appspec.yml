@@ -10,7 +10,7 @@ files:
 
 permissions:
   - object: /home/ec2-user/manage.py
-    owner: ec2-user
+    owner: root
     mode: 644
     type:
       - file
