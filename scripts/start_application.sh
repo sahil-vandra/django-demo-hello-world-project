@@ -7,4 +7,4 @@
 sudo chmod +x /home/ec2-user/manage.py
 cd /home/ec2-user/
 ls
-sudo python manage.py runserver --noreload
+python3 manage.py runserver
