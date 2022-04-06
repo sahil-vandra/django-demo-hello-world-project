@@ -7,8 +7,8 @@ files:
  - source: /manage.py
    destination: /home/ec2-user
 
- - source: /requirements.txt
-   destination: /home/ec2-user
+#  - source: /requirements.txt
+#    destination: /home/ec2-user
 
 permissions:
   # - object: /home/ec2-user/manage.py
@@ -35,7 +35,7 @@ hooks:
     - location: scripts/start_application.sh
       timeout: 6000
       runas: ec2-user
-  ApplicationStop:
-    - location: scripts/stop_application.sh
-      timeout: 6000
-      runas: ec2-user
+  # ApplicationStop:
+  #   - location: scripts/stop_application.sh
+  #     timeout: 6000
+  #     runas: ec2-user
