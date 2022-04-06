@@ -3,18 +3,31 @@ os: linux
 files:
  - source: /helloworld/
    destination: /home/ec2-user/helloworld
+
  - source: /manage.py
    destination: /home/ec2-user
+
  - source: /requirements.txt
    destination: /home/ec2-user
 
-permissions:
-  - object: /home/ec2-user/manage.py
-    owner: root
-    mode: 644
-    type:
-      - file
+ - source: /stop_application.sh
+   destination: /home/ec2-user/scripts
 
+ - source: /start_application.sh
+   destination: /home/ec2-user
+
+permissions:
+  # - object: /home/ec2-user/manage.py
+  #   owner: root
+  #   mode: 4755
+  #   type:
+  #     - file
+  - object: /home/ec2-user
+    pattern: "**"
+    owner: root
+    mode: 4755
+    type:
+      - directory
 hooks:
   BeforeInstall:
     - location: scripts/clean_instance.sh
@@ -24,11 +37,11 @@ hooks:
     - location: scripts/install_os_dependencies.sh
       timeout: 6000
       runas: root
-  ApplicationStop:
-    - location: scripts/stop_application.sh
-      timeout: 6000
-      runas: ec2-user
   ApplicationStart:
     - location: scripts/start_application.sh
+      timeout: 6000
+      runas: ec2-user
+  ApplicationStop:
+    - location: scripts/stop_application.sh
       timeout: 6000
       runas: ec2-user
