@@ -3,7 +3,7 @@ sudo pip3 install virtualenv
 virtualenv newenv
 source newenv/bin/activate
 yum install -y python3-pip sqlitebrowser
-pip install -r requirements.txt
-pip install django
-python3 manage.py migrate
-python3 manage.py runserver
+# sudo pip3 install -r requirements.txt
+sudo pip3 install django
+sudo python3 manage.py migrate
+sudo python3 manage.py runserver
