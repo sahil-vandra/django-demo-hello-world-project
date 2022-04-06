@@ -10,11 +10,11 @@ files:
  - source: /requirements.txt
    destination: /home/ec2-user
 
- - source: /stop_application.sh
+ - source: /start_application.sh
    destination: /home/ec2-user/scripts
 
- - source: /start_application.sh
-   destination: /home/ec2-user
+ - source: /stop_application.sh
+   destination: /home/ec2-user/scripts
 
 permissions:
   # - object: /home/ec2-user/manage.py
