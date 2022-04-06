@@ -4,7 +4,7 @@ files:
  - source: /helloworld/
    destination: /home/ec2-user/helloworld
  - source: /manage.py
-   destination: /home/ec2-user
+   destination: /home/ec2-user/helloworld
  - source: /requirements.txt
    destination: /home/ec2-user
 
