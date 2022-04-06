@@ -7,14 +7,12 @@ files:
    destination: /home/ec2-user
  - source: /requirements.txt
    destination: /home/ec2-user
-
 permissions:
   - object: /home/ec2-user/manage.py
     owner: root
     mode: 644
     type:
       - file
-
 hooks:
   BeforeInstall:
     - location: scripts/clean_instance.sh
