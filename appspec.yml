@@ -4,9 +4,9 @@ files:
  - source: /helloworld/
    destination: /home/ec2-user/helloworld
  - source: /manage.py
-   destination: /home/ec2-user/manage.py
+   destination: /home/ec2-user
  - source: /requirements.txt
-   destination: /home/ec2-user/requirements.txt
+   destination: /home/ec2-user
 
 permissions:
   - object: /home/ec2-user/manage.py
